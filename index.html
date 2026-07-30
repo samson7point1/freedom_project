@@ -289,7 +289,67 @@
       <img src="images/image10.png" alt="Branched Oak Observatory">
     </div>
     
-    <iframe class="rumble" width="360" height="640" src="https://rumble.com" frameborder="0" allowfullscreen></iframe>
+
+    <!-- 1. The Video Preview Container -->
+<a href="https://rumble.com" target="_blank" class="rumble-preview-card">
+  <!-- Use Rumble's thumbnail or your own custom image placeholder -->
+  <img src="https://rumble.com" alt="Watch on Rumble" class="thumbnail">
+  
+  <!-- Overlay Play Button -->
+  <div class="play-button-overlay">
+    <svg viewBox="0 0 24 24" width="50" height="50">
+      <path fill="#fff" d="M8 5v14l11-7z"/>
+    </svg>
+  </div>
+</a>
+
+<!-- 2. Styling to make it look like an authentic centered video player -->
+<style>
+  .rumble-preview-card {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 360px; /* Forces vertical format dimensions */
+    aspect-ratio: 9 / 16;
+    margin: 40px auto; /* Centers the component horizontally */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    background-color: #000;
+  }
+
+  .rumble-preview-card .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+
+  .rumble-preview-card:hover .thumbnail {
+    opacity: 1;
+  }
+
+  .play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  .rumble-preview-card:hover .play-button-overlay {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: #85ba14; /* Rumble green hover effect */
+  }
+</style>
+    
 
     <div class="rendering">
         <img src="images/image9.png">
